@@ -1,0 +1,16 @@
+flowchart LR
+    A[Sensor / Machine] -->|HTTP POST| B(Ingestion Service)
+
+    B -->|Write Raw Event| F[MinIO - raw/]
+    B -->|Publish| C((Kafka - sensor.raw))
+
+    C --> D(Processing Service)
+
+    D -->|Write Processed Metrics| G[(PostgreSQL)]
+    D -->|Write Processed Files| H[MinIO - processed/]
+
+    E(API Gateway) --> I(Query Service)
+    I --> G
+    I --> J[(Redis Cache)]
+
+    Client --> E
