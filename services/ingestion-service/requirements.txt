@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+confluent-kafka
+minio
+python-dotenv
