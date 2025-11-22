@@ -25,7 +25,7 @@ Alternative (Docker — reproducible environment)
 ```powershell
 cd services\ingestion-service
 docker build -t sfam-ingestion:dev .
-docker run --rm -p 8000:8000 --name sfam-ingestion sfam-ingestion:dev
+docker run --rm --env-file .env -p 8000:8000 --name sfam-ingestion sfam-ingestion:dev
 # follow logs
 docker logs -f sfam-ingestion
 ```

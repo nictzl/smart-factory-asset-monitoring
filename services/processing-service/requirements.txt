@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+confluent-kafka
+minio
+psycopg2-binary
+numpy
+python-dotenv
+logging
